@@ -7,7 +7,7 @@ if [ "${GITHUB_PUSH}" = "1" ]; then
     echo $CR_PAT | docker login ghcr.io -u abatalev --password-stdin
 fi
 
-function build_image() {
+function build_image () {
     echo "-[build ${3}]------------" 
     docker build -t ${3} -f ${2} .
     docker tag ${3} ghcr.io/${3}
@@ -22,7 +22,7 @@ function build_image() {
     fi
 }
 
-function test_image() {
+function test_image () {
     cat Dockerfile.fontcheck | sed s%XXX%${1}%g > Dockerfile.test
     docker build -t abatalev/fontcheck -f Dockerfile.test . 2> /dev/null
     rm Dockerfile.test
