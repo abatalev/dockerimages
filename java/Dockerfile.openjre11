@@ -1,0 +1,5 @@
+FROM adoptopenjdk/openjdk11:jre-11.0.11_9-alpine
+LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
+RUN apk --no-cache add msttcorefonts-installer fontconfig && \
+    update-ms-fonts && \
+    fc-cache -f

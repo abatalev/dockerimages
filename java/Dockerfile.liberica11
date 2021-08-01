@@ -1,0 +1,5 @@
+FROM bellsoft/liberica-openjre-alpine-musl:11.0.12-7
+LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
+RUN apk --no-cache add msttcorefonts-installer fontconfig && \
+    update-ms-fonts && \
+    fc-cache -f

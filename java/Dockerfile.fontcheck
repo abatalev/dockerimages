@@ -1,0 +1,6 @@
+FROM openjdk:8-jdk-alpine3.9 as build
+COPY FontChecker.java /opt/app/
+RUN cd /opt/app/; javac ./FontChecker.java
+FROM XXX
+COPY --from=build /opt/app/FontChecker.class /opt/app/
+CMD ["java", "-cp", "/opt/app", "FontChecker"]
