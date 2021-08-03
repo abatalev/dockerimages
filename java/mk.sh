@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 GITHUB_PUSH=0
 CREATE_TAR=0
