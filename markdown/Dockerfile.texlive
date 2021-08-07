@@ -1,0 +1,23 @@
+FROM alpine:3.14.1
+LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
+
+RUN apk update
+RUN apk --no-cache add texlive texlive-xetex texmf-dist-langcyrillic \
+        texmf-dist-latexextra texmf-dist-fontsextra \
+        font-noto ttf-dejavu ttf-liberation \ 
+        msttcorefonts-installer 
+
+# download msfonts
+RUN update-ms-fonts
+
+# install font Fira Code
+RUN apk --no-cache add font-fira-code --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
+
+# install font Exo Condensed
+RUN wget https://www.ndiscover.com/wp-content/themes/barrel-child/fonts/demo/exo2-condensed/Exo_Condensed.zip
+RUN unzip -d /usr/share/fonts/ Exo_Condensed.zip
+
+# update fonts cache
+RUN fc-cache -f
+
+# texlive-lang-cyrillic
