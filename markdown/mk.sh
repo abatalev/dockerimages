@@ -22,6 +22,6 @@ function build_image () {
     fi
 }
 
-build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:2.17.1 alpine3.15.0
+build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:2.17.1.1 alpine3.15.0
 build_image texlive.tar Dockerfile.texlive abatalev/texlive:20210325-r5 alpine3.15.0
-build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:2.17.1  abatalev/texlive:20210325-r5
+build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:2.17.1.1  abatalev/texlive:20210325-r5
