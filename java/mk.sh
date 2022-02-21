@@ -37,14 +37,14 @@ function test_image () {
 
 build_image openjdk8.tar Dockerfile.openjre8 abatalev/openjdk:8-jre-alpine3.9-ttf openjdk:8-jre-alpine3.9 
 build_image openjdk11.tar Dockerfile.openjre11 abatalev/openjdk:11-jre-alpine3.9-ttf adoptopenjdk/openjdk11:jre-11.0.11_9-alpine
-build_image liberica8.tar Dockerfile.liberica8 abatalev/liberica:8-jre-alpine3.9-ttf bellsoft/liberica-openjre-alpine-musl:8u302-8
-build_image liberica8.tar Dockerfile.liberica11 abatalev/liberica:11-jre-alpine3.9-ttf bellsoft/liberica-openjre-alpine-musl:11.0.12-7
+build_image liberica8.tar Dockerfile.liberica8 abatalev/liberica:8-jre-alpine3.9-ttf bellsoft/liberica-openjre-alpine-musl:8u322-6
+build_image liberica11.tar Dockerfile.liberica11 abatalev/liberica:11-jre-alpine3.9-ttf bellsoft/liberica-openjre-alpine-musl:11.0.14.1-1
 
 echo "Tests"
 test_image openjdk:8-jre-alpine3.9
 test_image adoptopenjdk/openjdk11:jre-11.0.11_9-alpine
-test_image bellsoft/liberica-openjre-alpine-musl:8u302-8
-test_image bellsoft/liberica-openjre-alpine-musl:11.0.12-7
+test_image bellsoft/liberica-openjre-alpine-musl:8u322-6
+test_image bellsoft/liberica-openjre-alpine-musl:11.0.14.1-1
 test_image abatalev/openjdk:8-jre-alpine3.9-ttf
 test_image abatalev/openjdk:11-jre-alpine3.9-ttf
 test_image abatalev/liberica:8-jre-alpine3.9-ttf
