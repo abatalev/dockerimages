@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITHUB_PUSH=0
+GITHUB_PUSH=1
 CREATE_TAR=0
 
 if [ "${GITHUB_PUSH}" = "1" ]; then
@@ -22,6 +22,6 @@ function build_image () {
     fi
 }
 
-build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:2.17.1.1 alpine3.15.0
-build_image texlive.tar Dockerfile.texlive abatalev/texlive:20210325-r5 alpine3.15.0
-build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:2.17.1.1  abatalev/texlive:20210325-r5
+build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:2.18 alpine3.16.0
+build_image texlive.tar Dockerfile.texlive abatalev/texlive:20220403.62885-r2 alpine3.16.0
+build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:2.18  abatalev/texlive:20220403.62885-r2
