@@ -30,3 +30,8 @@ jobs:
         run: |
           cd java
           ./mk.sh
+
+      - name: Run build docker images for markdown
+        run: |
+          cd markdown
+          ./mk.sh
