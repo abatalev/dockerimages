@@ -41,8 +41,8 @@ build_image liberica8.tar Dockerfile.liberica8 abatalev/liberica:8-jre-alpine3.9
 build_image openjdk11.tar Dockerfile.openjre11 abatalev/openjdk:11-jre-alpine3.9-ttf adoptopenjdk/openjdk11:jre-11.0.11_9-alpine
 build_image liberica11.tar Dockerfile.liberica11 abatalev/liberica:11-jre-alpine3.9-ttf bellsoft/liberica-openjre-alpine-musl:11.0.14.1-1
 
-build_image liberica17.tar Dockerfile.liberica17 abatalev/liberica:17-jre-alpine3.16-ttf bellsoft/liberica-openjre-alpine-musl:17.0.3.1-2
-build_image liberica21.tar Dockerfile.liberica21 abatalev/liberica:21-jre-alpine3.18-ttf bellsoft/liberica-openjre-alpine-musl:21.0.1-12
+build_image liberica17.tar Dockerfile.liberica17 abatalev/liberica:17.0.7-7-jre-alpine3.16-ttf bellsoft/liberica-openjre-alpine-musl:17.0.3.1-2
+build_image liberica21.tar Dockerfile.liberica21 abatalev/liberica:21.0.3-10-jre-alpine3.18-ttf bellsoft/liberica-openjre-alpine-musl:21.0.1-12
 
 echo "Tests java 8"
 test_image openjdk:8-jre-alpine3.9
@@ -58,9 +58,9 @@ test_image abatalev/liberica:11-jre-alpine3.9-ttf
 
 echo "Tests java 17"
 test_image openjdk:17-ea-14-alpine3.14
-test_image bellsoft/liberica-openjre-alpine-musl:17.0.3.1-2
-test_image abatalev/liberica:17-jre-alpine3.16-ttf
+test_image bellsoft/liberica-openjre-alpine-musl:17.0.7-7
+test_image abatalev/liberica:17.0.7-7-jre-alpine3.16-ttf
 
 echo "Tests java 21"
-test_image bellsoft/liberica-openjre-alpine-musl:21.0.1-12
-test_image abatalev/liberica:21-jre-alpine3.18-ttf
+test_image bellsoft/liberica-openjre-alpine-musl:21.0.3-10
+test_image abatalev/liberica:21.0.3-10-jre-alpine3.18-ttf
