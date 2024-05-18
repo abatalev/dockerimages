@@ -22,11 +22,11 @@ function build_image () {
     fi
 }
 
-build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:3.1.11.1 alpine3.19.0
-build_image texlive.tar Dockerfile.texlive abatalev/texlive:20230506.66984-r2 alpine3.19.0
-build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:3.1.11.1  abatalev/texlive:20230506.66984-r2s
+build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:3.1.13 alpine3.19.1
+build_image texlive.tar Dockerfile.texlive abatalev/texlive:20230506.66984-r3 alpine3.19.1
+build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:3.1.13  abatalev/texlive:20230506.66984-r3
 
 docker run --rm -v "$(pwd)/..:/work" \
     -w /work \
-    ghcr.io/abatalev/pandoc-pdf:3.1.11.1 \
+    ghcr.io/abatalev/pandoc-pdf:3.1.13 \
     md2pdf.sh readme.md readme.pdf
