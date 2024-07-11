@@ -1,5 +1,5 @@
 FROM alpine:3.19.1
 LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
 
-RUN wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.1.13-linux-amd64.tar.gz
+RUN wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-linux-amd64.tar.gz
 RUN tar xvzf pandoc-3.2-linux-amd64.tar.gz --strip-components 1 -C /usr/local
