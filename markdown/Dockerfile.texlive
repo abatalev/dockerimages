@@ -1,17 +1,18 @@
-FROM alpine:3.19.1
+FROM alpine:3.20.1
 LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
 
 RUN apk update
-RUN apk --no-cache add texlive texlive-xetex texmf-dist-langcyrillic \
-        texmf-dist-latexextra texmf-dist-fontsextra \
-        font-noto ttf-dejavu ttf-liberation \ 
-        msttcorefonts-installer 
+RUN apk --no-cache add msttcorefonts-installer font-noto \
+        ttf-dejavu ttf-liberation \ 
+        font-fira-mono-nerd font-fira-code-nerd \
+        texlive-xetex texlive-luatex \
+        texmf-dist-langcyrillic texmf-dist-langenglish \
+        texmf-dist-latexrecommended texmf-dist-latexextra \
+        texmf-dist-fontsrecommended texmf-dist-fontsextra \
+        texmf-dist-lang
 
 # download msfonts
 RUN update-ms-fonts
-
-# install font Fira Code
-RUN apk --no-cache add font-fira-code --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 # install font Exo Condensed
 RUN wget https://www.wfonts.com/download/data/2017/10/16/exo-condensed/exo-condensed.zip
@@ -19,5 +20,3 @@ RUN unzip -d /usr/share/fonts/ exo-condensed.zip
 
 # update fonts cache
 RUN fc-cache -f
-
-# texlive-lang-cyrillic

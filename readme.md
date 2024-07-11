@@ -18,7 +18,6 @@ author: Andrey Batalev
 ```sh
 docker run --rm -v "$(pwd):/work" \
     -w /work \
-    ghcr.io/abatalev/pandoc-pdf:3.2 \
+    ghcr.io/abatalev/pandoc-pdf:3.2.1 \
     md2pdf.sh readme.md readme.pdf
 ```
-

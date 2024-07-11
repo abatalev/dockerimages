@@ -4,7 +4,7 @@ pandoc \
     -V lang=ru-RU \
     -V 'mainfont:Exo 2 Light Condensed' \
     -V 'sansfont:Exo 2 Regular Condensed' \
-    -V 'monofont:Fira Code' \
+    -V 'monofont:FiraCode Nerd Font' \
     -V 'mathfont:texgyredejavu-math.otf' \
     -V 'fontsize: 14pt' \
     -V 'code-block-font-size: \footnotesize' \
