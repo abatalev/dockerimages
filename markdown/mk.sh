@@ -22,9 +22,9 @@ function build_image () {
     fi
 }
 
-build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:3.2.1 alpine3.20.1
-build_image texlive.tar Dockerfile.texlive abatalev/texlive:20240210.69778-r2 alpine3.20.1
-build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:3.2.1  abatalev/texlive:20240210.69778-r2
+build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:3.5 alpine3.20.3
+build_image texlive.tar Dockerfile.texlive abatalev/texlive:20240210.69778-r4 alpine3.20.3
+build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:3.5  abatalev/texlive:20240210.69778-r4
 
 echo "run test"
 docker run --rm -v "$(pwd)/..:/work" \

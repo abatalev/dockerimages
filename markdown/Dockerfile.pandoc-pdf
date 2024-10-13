@@ -1,11 +1,11 @@
-FROM abatalev/texlive:20240210.69778-r2
+FROM abatalev/texlive:20240210.69778-r4
 LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
 
 COPY md2pdf.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/md2pdf.sh
 
-RUN wget https://github.com/jgm/pandoc/releases/download/3.2.1/pandoc-3.2.1-linux-amd64.tar.gz
-RUN tar xvzf pandoc-3.2.1-linux-amd64.tar.gz --strip-components 1 -C /usr/local
+RUN wget https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-linux-amd64.tar.gz
+RUN tar xvzf pandoc-3.5-linux-amd64.tar.gz --strip-components 1 -C /usr/local
 
 RUN wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/2.4.2/Eisvogel-2.4.2.tar.gz
 RUN mkdir /usr/share/eisvogel
