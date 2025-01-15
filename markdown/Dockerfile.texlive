@@ -1,5 +1,5 @@
-FROM alpine:3.20.3
-LABEL org.opencontainers.image.source https://github.com/abatalev/dockerimages
+FROM alpine:3.21.2
+LABEL org.opencontainers.image.source=https://github.com/abatalev/dockerimages
 
 RUN apk update
 RUN apk --no-cache add msttcorefonts-installer font-noto \

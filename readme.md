@@ -18,16 +18,14 @@ author: Andrey Batalev
 ```sh
 docker run --rm -v "$(pwd):/work" \
     -w /work \
-    ghcr.io/abatalev/pandoc-pdf:3.5 \
+    ghcr.io/abatalev/pandoc-pdf:3.6.2 \
     md2pdf.sh readme.md readme.pdf
 ```
 
 ## TO DO
 
-- upgrade alpine to 3.21.2 
-- upgrade texlive to 20240210.69778-r8
-- upgrade pandoc to 3.6.2
-- use https://hub.docker.com/r/bellsoft/liberica-runtime-container
+
+- use liberica-runtime-container
 
 ## See also
 
