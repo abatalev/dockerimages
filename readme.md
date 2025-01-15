@@ -24,7 +24,10 @@ docker run --rm -v "$(pwd):/work" \
 
 ## TO DO
 
-- axiom jdk
+- Use axiom jdk?
+- The list of installed software components and their licenses 
+  can be retrieved by executing the apk list -I command in the 
+  regular image, or grep -E '^[PVL]:' /var/lib/apk/db/installed in the slim image.
 
 ## Java Runtimes
 
