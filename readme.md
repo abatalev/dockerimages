@@ -24,18 +24,23 @@ docker run --rm -v "$(pwd):/work" \
 
 ## TO DO
 
+- axiom jdk
 
-- use liberica-runtime-container
+## Java Runtimes
+
+- Bellsoft Libarica Alpine - ok
+- Liberica-runtime-container (Alpaquita) - error (load packages permission denied)
 
 ## See also
 
-- alpaquita linux 
-  - https://hub.docker.com/r/bellsoft/alpaquita-linux-base
-  - https://github.com/bell-sw/Alpaquita/tree/master/docker/repos/alpaquita-linux-base
+- Java Runtimes 
+  - alpaquita linux 
+    - https://hub.docker.com/r/bellsoft/alpaquita-linux-base
+    - https://github.com/bell-sw/Alpaquita/tree/master/docker/repos/alpaquita-linux-base
 
-- liberica-runtime-container 
-  - https://hub.docker.com/r/bellsoft/liberica-runtime-container
-  - https://github.com/bell-sw/Alpaquita/tree/master/docker/repos/liberica-runtime-container
-  - https://www.baeldung.com/spring-docker-liberica
+  - liberica-runtime-container 
+    - https://hub.docker.com/r/bellsoft/liberica-runtime-container
+    - https://github.com/bell-sw/Alpaquita/tree/master/docker/repos/liberica-runtime-container
+    - https://www.baeldung.com/spring-docker-liberica
 
-- axiom jdk
+  - axiom jdk
