@@ -24,7 +24,9 @@ docker run --rm -v "$(pwd):/work" \
 
 ## TO DO
 
-- update pandoc to 3.6.2
+- upgrade alpine to 3.21.2 
+- upgrade texlive to 20240210.69778-r8
+- upgrade pandoc to 3.6.2
 - use https://hub.docker.com/r/bellsoft/liberica-runtime-container
 
 ## See also
