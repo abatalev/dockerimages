@@ -23,7 +23,7 @@ function build_image () {
 }
 
 build_image pandoc.tar Dockerfile.pandoc abatalev/pandoc:3.6.3 alpine3.21.3
-build_image texlive.tar Dockerfile.texlive abatalev/texlive:20240210.69778-r8 alpine3.21.2
+build_image texlive.tar Dockerfile.texlive abatalev/texlive:20240210.69778-r8 alpine3.21.3
 build_image pandoc-pdf.tar Dockerfile.pandoc-pdf abatalev/pandoc-pdf:3.6.3  abatalev/texlive:20240210.69778-r8
 
 echo "run test"
