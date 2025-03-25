@@ -4,8 +4,8 @@ LABEL org.opencontainers.image.source=https://github.com/abatalev/dockerimages
 COPY md2pdf.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/md2pdf.sh
 
-RUN wget https://github.com/jgm/pandoc/releases/download/3.6.3/pandoc-3.6.3-linux-amd64.tar.gz
-RUN tar xvzf pandoc-3.6.3-linux-amd64.tar.gz --strip-components 1 -C /usr/local
+RUN wget https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-linux-amd64.tar.gz
+RUN tar xvzf pandoc-3.6.4-linux-amd64.tar.gz --strip-components 1 -C /usr/local
 
 RUN mkdir /usr/share/eisvogel
 RUN wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.1.0/Eisvogel-3.1.0.tar.gz
