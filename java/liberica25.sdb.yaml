@@ -1,0 +1,27 @@
+version: "0.0.1"
+prefix: "abatalev"
+facts:
+  - name: os-name
+    args: ["cat", "/etc/os-release", "|", "awk", "-F=", "/^ID=/{ print $2 }"]
+  - name: "os-version"
+    args:
+      [
+        "cat",
+        "/etc/os-release",
+        "|",
+        "awk",
+        "-F=",
+        "/^VERSION_ID=/{ print $2 }",
+      ]
+  - name: "java-version"
+    args:
+      [
+        "java",
+        "-version",
+        "|&",
+        "awk",
+        '/Runtime/{ gsub(")","",$0);gsub("+","-",$0); gsub("-LTS","",$0); print substr($0,index($0,"(build")+6) }',
+      ]
+tags:
+  - "@java-version|-|$os-name|-ttf"
+  - "@java-version|-|$os-name|@os-version|-ttf"

@@ -12,7 +12,9 @@ if [ ! -f "../tools/smartdockerbuilder/sdb" ]; then
     cd ../tools || exit
     git clone https://github.com/abatalev/smart-docker-builder.git smartdockerbuilder 
     cd smartdockerbuilder || exit
-    ./mk.sh
+    # ./mk.sh
+    go generate
+    go build -o sdb .
     cd "${CDIR}" || exit
 fi
 
@@ -76,23 +78,31 @@ if [ "$BUILD_OLD" = "1" ]; then
 fi
 
 echo "### Tests java 17"
-echo " -- Latest GA release: 17.0.13 (17.0.13+7)"
+echo " -- Latest GA release: 17.0.13 (17.0.13+12)"
 
-../tools/smartdockerbuilder/sdb Dockerfile.liberica17l
-build_image liberica17.tar Dockerfile.liberica17 abatalev/liberica:17.0.13-12-jre-alpine3.16-ttf bellsoft/liberica-openjre-alpine-musl:17.0.13-12
+../tools/smartdockerbuilder/sdb Dockerfile.liberica17
+build_image liberica17.tar Dockerfile.liberica17 abatalev/liberica:17.0.13-12-alpine3.20.3-ttf bellsoft/liberica-openjre-alpine-musl:17.0.13-12
 #build_image lrc17.tar Dockerfile.lrc17 abatalev/lrc:17.0.13-12-jre-alpine3.16-ttf bellsoft/liberica-runtime-container:jre-17.0.13-musl
 
 test_image openjdk:17-ea-14-alpine3.14
 test_image bellsoft/liberica-openjre-alpine-musl:17.0.13-12
 test_image bellsoft/liberica-runtime-container:jre-17.0.13-musl
-test_image abatalev/liberica:17.0.13-12-jre-alpine3.16-ttf
+test_image abatalev/liberica:17.0.13-12-alpine3.20.3-ttf
 #test_image abatalev/lrc:17.0.13-12-jre-alpine3.16-ttf
 
 echo "### Tests java 21"
 echo " -- Latest GA release: 21.0.5 (21.0.5+11)"
 
 ../tools/smartdockerbuilder/sdb Dockerfile.liberica21
-build_image liberica21.tar Dockerfile.liberica21 abatalev/liberica:21.0.5-11-jre-alpine3.18-ttf bellsoft/liberica-openjre-alpine-musl:21.0.5-11
+build_image liberica21.tar Dockerfile.liberica21 abatalev/liberica:21.0.5-11-alpine3.20.3-ttf bellsoft/liberica-openjre-alpine-musl:21.0.5-11
 
 test_image bellsoft/liberica-openjre-alpine-musl:21.0.5-11
-test_image abatalev/liberica:21.0.5-11-jre-alpine3.18-ttf
+test_image abatalev/liberica:21.0.5-11-alpine3.20.3-ttf
+
+echo "### Tests java 25"
+echo " -- Latest GA release: 25 (25-37)"
+../tools/smartdockerbuilder/sdb Dockerfile.liberica25
+build_image liberica25.tar Dockerfile.liberica25 abatalev/liberica:25-37-alpine3.22.1-ttf bellsoft/liberica-openjre-alpine-musl:25-37
+
+test_image bellsoft/liberica-openjre-alpine-musl:25-37
+test_image abatalev/liberica:25-37-alpine3.22.1-ttf
